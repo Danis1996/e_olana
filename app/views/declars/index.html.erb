@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Declars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Typa</th>
+      <th>Reponse</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @declars.each do |declar| %>
+      <tr>
+        <td><%= declar.user %></td>
+        <td><%= declar.typa_id %></td>
+        <td><%= declar.reponse %></td>
+        <td><%= link_to 'Show', declar %></td>
+        <td><%= link_to 'Edit', edit_declar_path(declar) %></td>
+        <td><%= link_to 'Destroy', declar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Declar', new_declar_path %>

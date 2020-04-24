@@ -1,0 +1,2 @@
+module TypasHelper
+end

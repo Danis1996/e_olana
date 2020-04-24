@@ -1,0 +1,37 @@
+<%= form_with(model: typa, local: true) do |form| %>
+  <% if typa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(typa.errors.count, "error") %> prohibited this typa from being saved:</h2>
+
+      <ul>
+        <% typa.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :titre %>
+    <%= form.text_field :titre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :durre %>
+    <%= form.number_field :durre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hafa %>
+    <%= form.text_field :hafa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vue %>
+    <%= form.check_box :vue %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
