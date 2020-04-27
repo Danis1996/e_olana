@@ -17,7 +17,7 @@ class FichiersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create fichier" do
     assert_difference('Fichier.count') do
-      post fichiers_url, params: { fichier: { description: @fichier.description, file: @fichier.file, titre: @fichier.titre, typa_id: @fichier.typa_id } }
+      post fichiers_url, params: { fichier: { contenu: @fichier.contenu, titre: @fichier.titre } }
     end
 
     assert_redirected_to fichier_url(Fichier.last)
@@ -34,7 +34,7 @@ class FichiersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update fichier" do
-    patch fichier_url(@fichier), params: { fichier: { description: @fichier.description, file: @fichier.file, titre: @fichier.titre, typa_id: @fichier.typa_id } }
+    patch fichier_url(@fichier), params: { fichier: { contenu: @fichier.contenu, titre: @fichier.titre } }
     assert_redirected_to fichier_url(@fichier)
   end
 

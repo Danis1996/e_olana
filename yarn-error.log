@@ -1,0 +1,37 @@
+Arguments: 
+  /home/arnaud/.nvm/versions/node/v12.16.1/bin/node /usr/share/yarn/bin/yarn.js add --dev webpack-dev-server
+
+PATH: 
+  /home/arnaud/.rvm/gems/ruby-2.6.3/bin:/home/arnaud/.rvm/gems/ruby-2.6.3@global/bin:/home/arnaud/.rvm/rubies/ruby-2.6.3/bin:/home/arnaud/bin:/home/arnaud/.local/bin:/home/arnaud/.nvm/versions/node/v12.16.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/arnaud/.dotnet/tools:/home/arnaud/.rvm/bin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.16.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:64:26)
+
+npm manifest: 
+  {
+    "name": "e_olana",
+    "private": true,
+    "dependencies": {
+      "@rails/ujs": "^6.0.0",
+      "turbolinks": "^5.2.0",
+      "@rails/activestorage": "^6.0.0",
+      "@rails/actioncable": "^6.0.0"
+    },
+    "version": "0.1.0"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

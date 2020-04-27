@@ -10,6 +10,7 @@
 		}
 	}
 
+	<%  %>
 	var	rajao = new Olona('RAJAONARISON Fidel', "0123456789");	
 	var	rabeza =  new Olona('Societé RABEZA', "0000000000");	
 	var	taratra =  new Olona('Agence TARATRA', "1111111111");	

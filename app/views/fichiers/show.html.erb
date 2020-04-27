@@ -1,23 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Typa:</strong>
-  <%= @fichier.typa_id %>
-</p>
-
-<p>
   <strong>Titre:</strong>
   <%= @fichier.titre %>
 </p>
 
 <p>
-  <strong>File:</strong>
-  <%= @fichier.file %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @fichier.description %>
+  <strong>Contenu:</strong>
+  <%= @fichier.contenu %>
 </p>
 
 <%= link_to 'Edit', edit_fichier_path(@fichier) %> |

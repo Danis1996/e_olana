@@ -1,13 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  typa: one
   titre: MyString
-  file: MyString
-  description: MyText
+  contenu: MyString
 
 two:
-  typa: two
   titre: MyString
-  file: MyString
-  description: MyText
+  contenu: MyString

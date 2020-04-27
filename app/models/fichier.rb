@@ -1,3 +1,3 @@
 class Fichier < ApplicationRecord
-  belongs_to :typa
+	has_many :fichier_reclamations
 end

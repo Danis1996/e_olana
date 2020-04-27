@@ -14,10 +14,8 @@ class FichiersTest < ApplicationSystemTestCase
     visit fichiers_url
     click_on "New Fichier"
 
-    fill_in "Description", with: @fichier.description
-    fill_in "File", with: @fichier.file
+    fill_in "Contenu", with: @fichier.contenu
     fill_in "Titre", with: @fichier.titre
-    fill_in "Typa", with: @fichier.typa_id
     click_on "Create Fichier"
 
     assert_text "Fichier was successfully created"
@@ -28,10 +26,8 @@ class FichiersTest < ApplicationSystemTestCase
     visit fichiers_url
     click_on "Edit", match: :first
 
-    fill_in "Description", with: @fichier.description
-    fill_in "File", with: @fichier.file
+    fill_in "Contenu", with: @fichier.contenu
     fill_in "Titre", with: @fichier.titre
-    fill_in "Typa", with: @fichier.typa_id
     click_on "Update Fichier"
 
     assert_text "Fichier was successfully updated"

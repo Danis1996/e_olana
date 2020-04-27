@@ -5,10 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Typa</th>
       <th>Titre</th>
-      <th>File</th>
-      <th>Description</th>
+      <th>Contenu</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +14,8 @@
   <tbody>
     <% @fichiers.each do |fichier| %>
       <tr>
-        <td><%= fichier.typa_id %></td>
         <td><%= fichier.titre %></td>
-        <td><%= fichier.file %></td>
-        <td><%= fichier.description %></td>
+        <td><%= fichier.contenu %></td>
         <td><%= link_to 'Show', fichier %></td>
         <td><%= link_to 'Edit', edit_fichier_path(fichier) %></td>
         <td><%= link_to 'Destroy', fichier, method: :delete, data: { confirm: 'Are you sure?' } %></td>

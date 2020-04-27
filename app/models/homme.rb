@@ -1,2 +1,0 @@
-class Homme < ApplicationRecord
-end

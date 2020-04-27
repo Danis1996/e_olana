@@ -10,51 +10,87 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_122440) do
+ActiveRecord::Schema.define(version: 2020_04_25_165823) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "declars", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "typa_id"
-    t.string "reponse"
+  create_table "envoyers", force: :cascade do |t|
+    t.bigint "user_reclamation_id"
+    t.string "titre"
+    t.string "contenu"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["typa_id"], name: "index_declars_on_typa_id"
-    t.index ["user_id"], name: "index_declars_on_user_id"
+    t.index ["user_reclamation_id"], name: "index_envoyers_on_user_reclamation_id"
+  end
+
+  create_table "fichier_reclamations", force: :cascade do |t|
+    t.bigint "reclamation_id", null: false
+    t.bigint "fichier_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["fichier_id"], name: "index_fichier_reclamations_on_fichier_id"
+    t.index ["reclamation_id"], name: "index_fichier_reclamations_on_reclamation_id"
   end
 
   create_table "fichiers", force: :cascade do |t|
-    t.bigint "typa_id"
     t.string "titre"
-    t.string "file"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["typa_id"], name: "index_fichiers_on_typa_id"
-  end
-
-  create_table "hommes", force: :cascade do |t|
+    t.string "contenu"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "typas", force: :cascade do |t|
-    t.string "titre"
+  create_table "reclamations", force: :cascade do |t|
     t.integer "durre"
-    t.string "hafa"
-    t.boolean "vue"
+    t.string "titre"
+    t.string "couleur"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_reclamations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "reclamation_id", null: false
+    t.string "date"
+    t.boolean "vue"
+    t.boolean "resolu"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["reclamation_id"], name: "index_user_reclamations_on_reclamation_id"
+    t.index ["user_id"], name: "index_user_reclamations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "nom"
-    t.boolean "is_admin"
+    t.string "identifian"
     t.string "nif"
+    t.string "tel"
+    t.boolean "is_admin"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "views", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_views_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "fichier_reclamations", "fichiers"
+  add_foreign_key "fichier_reclamations", "reclamations"
+  add_foreign_key "user_reclamations", "reclamations"
+  add_foreign_key "user_reclamations", "users"
 end

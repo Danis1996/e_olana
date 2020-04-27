@@ -69,6 +69,6 @@ class FichiersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def fichier_params
-      params.require(:fichier).permit(:typa_id, :titre, :file, :description)
+      params.require(:fichier).permit(:titre, :contenu)
     end
 end
